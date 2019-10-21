@@ -2,7 +2,7 @@ package com.amazonaws.samples;
 
 import software.amazon.awssdk.auth.credentials.ProfileCredentialsProvider;
 import software.amazon.awssdk.core.sync.RequestBody;
-import software.amazon.awssdk.regions.providers.DefaultAwsRegionProviderChain;
+import software.amazon.awssdk.regions.Region;
 import software.amazon.awssdk.services.s3.S3Client;
 import software.amazon.awssdk.services.s3.model.ObjectCannedACL;
 import software.amazon.awssdk.services.s3.model.PutObjectRequest;
@@ -13,7 +13,7 @@ public class PutObjectToS3 {
 
 			// S3Client accessing AWS access key and secret access key from "app-1-development" profile
 			S3Client s3Client = S3Client.builder().credentialsProvider(ProfileCredentialsProvider.create("app-1-development"))
-					.region(new DefaultAwsRegionProviderChain().getRegion()).build();
+					.region(Region.US_EAST_1).build();
 
 			// Bucket Name
 			String BUCKET_NAME = "test-new-bu";
