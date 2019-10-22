@@ -34,8 +34,6 @@ public class ReadingText {
 		catch (IOException ex) 
 		{
 			System.out.println("Error reading file '" + filepath + "'");
-			// Or we could just do this:
-			// ex.printStackTrace();
 		}
 		return text;
 	}
